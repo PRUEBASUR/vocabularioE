@@ -7,6 +7,7 @@ h1{
     font-size: 40px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    width: 100%;
 }
 
 #datosP{
@@ -44,6 +45,7 @@ table td{
         font-size:5rem;
     }
 }
+
 
 
 
