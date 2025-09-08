@@ -9,6 +9,12 @@ h1{
     text-align: center;
 }
 
+#datosP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 table{
     border: 2px solid yellow;
     width: 100%;
@@ -29,9 +35,14 @@ table td{
 }
 
 @query screen and (max-width:480px){
+    table{
+        max-width: 50%;
+        border: 5px solid red;
+    }
     h1{
         width:120px;
-        font-size:3rem;
+        font-size:5rem;
     }
 }
+
 
