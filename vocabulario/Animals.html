@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMALS</title>
+    <link rel="stylesheet" href="css/Animals.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    
+    <h1>ANIMALS IN ENGLISH</h1>
+
+    <div id="datosP"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>WORD</th>
+                <th>TRADUCCION</th>
+                <th>CATEGORIA</th>
+            </tr>
+        </thead>
+        <tbody id="tbody" class="tbody">
+            <tr>
+                <td>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+        const supUrl = 'https://aqwcjykoofoowptigylk.supabase.co';
+        const supKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFxd2NqeWtvb2Zvb3dwdGlneWxrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NzI4MTc5NSwiZXhwIjoyMDcyODU3Nzk1fQ.k-Jeepp7p1s-9WN-rb1DMvBjMijwpN4dTihnis4xx3k';
+        
+        const supabase = window.supabase.createClient(supUrl,supKey)
+        
+        async function informacion() {
+            /*const {data,error} = await supabase //SIEMPRE DEBE SER DATA NO CAMBIA
+            .from('palabras')
+            .select('*')
+            //.eq('idPalabra',4) //eq es similar al WHERE
+            .eq('idCategoria','2')
+
+            if(error){
+                console.error("NO SE PUDO OBTENER LA INFO",error)
+                return
+            }*/
+
+//PARA LA RELACION DE LAS TABLAS, EN SELECT SE COLOCA EL NOMBRE DE LA TABLA Y ENTRE PARENTESIS LOS CAMPOS QUE SE NECESITAN.
+            const {data,error} = await supabase 
+            .from('palabras')
+            .select('idPalabra,Palabra,Categoria(Categoria),Traduccion(Traduccion) ')
+            .eq('idCategoria','1')
+            if(error){
+                console.error("NO SE PUDO OBTENER LA INFO",error)
+                return
+            }
+            //document.getElementById('datosP').innerHTML = JSON.stringify(data,null,2)
+
+            const table = document.getElementById('tbody')
+            table.innerHTML = '';
+            
+            data.forEach(palabra => {
+//const traducciones = (palabra.Traduccion||[] ) -> INDICA QUE VA A RECCORER EL ARRAY DE LA TABLA TRADUCCION. SI HAY ELEMENTOS
+//MUESTRA EL VALOR, SI NO LO HAY CON EL OPERADOR OR O || SE USARA UN ARRAY VACIO POR DEFECTO.
+//.MAP GENERA UN NUEVO ARRAY CON LOS VALORES DEL FOREACH Y EL JOIN SOLO UNE TODOS LOS VALORES
+                
+                const traducciones = (palabra.Traduccion||[] )
+                .map(t=>t.Traduccion)
+                //.join(', '||'-');
+                const Categoria = palabra.Categoria?.Categoria || '-';
+                table.innerHTML += `
+            <tr>
+                <td>${palabra.Palabra}</td>
+                <td>${traducciones}</td>
+                <td>${Categoria}</td>
+            </tr>
+        `;
+            });
+
+
+        }
+        informacion()
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

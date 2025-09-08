@@ -1,0 +1,88 @@
+*{
+    margin: 0 px;
+    padding: 0 px;
+}
+
+h1{
+    color: rgb(30, 30, 148);
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.contenedor{
+    border: 3px solid red;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor a{
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    display: block;
+    text-align: center;
+    margin: 20px;
+    height: 15vh;
+}
+
+
+.animals:hover{
+    background-image: url(../imagenes/leon.png);
+    background-repeat: no-repeat;
+    background-size: 5% 50%;
+    background-position: center;
+
+}
+
+.food:hover{
+    background-image: url(../imagenes/food.png);
+    background-repeat: no-repeat;
+    background-size: 5% 50%;
+    background-position: center;
+
+}
+
+.colors:hover{
+    background-image: url(../imagenes/colors.png);
+    background-repeat: no-repeat;
+    background-size: 5% 50%;
+    background-position: center;
+
+}
+
+
+.trip:hover{
+    background-image: url(../imagenes/trip.png);
+    background-repeat: no-repeat;
+    background-size: 5% 50%;
+    background-position: center;
+
+}
+
+
+.sports:hover{
+    background-image: url(../imagenes/sports.png);
+    background-repeat: no-repeat;
+    background-size: 5% 50%;
+    background-position: center;
+
+}
+
+
+.numbers:hover{
+    background-image: url(../imagenes/numbers.png);
+    background-repeat: no-repeat;
+    background-size: 5% 50%;
+    background-position: center;
+
+}
+
+
+
+
+
