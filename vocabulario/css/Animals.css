@@ -3,7 +3,7 @@
     padding: 0px;
 }
 h1{
-    color: rgb(243, 247, 31);
+    color: blue;
 }
 
 #datosP{
@@ -37,6 +37,7 @@ table td{
         border: 5px solid red;
     }
 }
+
 
 
 
