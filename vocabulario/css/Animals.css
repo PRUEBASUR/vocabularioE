@@ -3,9 +3,12 @@
     padding: 0px;
 }
 h1{
-    color: blue;
+    color: rgb(243, 247, 31);
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    display: block;
 }
-
 #datosP{
     display: flex;
     justify-content: center;
@@ -37,6 +40,7 @@ table td{
         border: 5px solid red;
     }
 }
+
 
 
 
