@@ -51,6 +51,8 @@ table td{
 @media screen and (max-width: 480px) {
     .title h1{
         font-size: 2rem;
+        width: 100%;
     }
+
 
 }
