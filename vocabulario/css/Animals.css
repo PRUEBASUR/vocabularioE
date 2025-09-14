@@ -52,7 +52,9 @@ table td{
     .title h1{
         font-size: 2rem;
         width: 100%;
+        text-align:center;
     }
 
 
 }
+
