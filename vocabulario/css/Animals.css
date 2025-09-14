@@ -2,17 +2,16 @@
     margin: 0px;
     padding: 0px;
 }
-h1{
-    color: rgb(243, 247, 31);
-    font-size: 40px;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    display: block;
+
+body{
+    background: #FB3C23;
 }
-#datosP{
+
+.datosP{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 table{
@@ -26,27 +25,32 @@ table{
 table th{
     border: 3px solid green;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
 }
 table td{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 23px;
-    color: rgb(12, 8, 218);
-
+    color: rgb(228, 228, 228);
 }
 
-@query screen and (max-width:480px){
-    table{
-        max-width: 50%;
-        border: 5px solid red;
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.title h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    color: rgb(238, 232, 232);
+}
+
+@media screen and (max-width: 480px) {
+    .title h1{
+        font-size: 2rem;
     }
+
 }
-
-
-
-
-
-
-
-
-
-
